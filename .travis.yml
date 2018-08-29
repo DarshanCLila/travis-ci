@@ -9,3 +9,10 @@ before_install:
   - docker build -t travis-ci/latest .
   - docker run -d -p 127.0.0.1:3000:3000 travis-ci/latest
   - docker ps
+
+notifications:
+  slack:
+    rooms:
+      - sellnews:1o9UFK64jlNI7wLIQ77WUNlB#api-commits
+    on_success: change # default: always
+    on_failure: always # default: always
