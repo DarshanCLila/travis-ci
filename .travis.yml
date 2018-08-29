@@ -3,6 +3,8 @@ sudo: required
 services:
   - docker
 
+language: none
+
 before_install:
   - docker build -t travis-ci/latest .
   - docker run -d -p 127.0.0.1:3000:3000 travis-ci/latest
